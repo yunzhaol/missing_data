@@ -41,7 +41,7 @@ We can use R's [@citeR] mean() function to remove the observations with missing 
 
 Running simulations to eliminate existing observations and then applying different alternatives can enhance our comprehension of the compromises we encounter. Regardless of the decision taken, since seldom is there a straightforward solution, we have to make an effort to record and share the actions taken, and investigate how varying decisions impact later predictions.[@tellingstories]
 
-Sometimes, a variable with specific values is used to encode missing data. For example, though R offers the option "NA," numerical data is occasionally input as "-99" or, in the event that it is missing, as a very big number like "99999999”. Here introduced =three types of known missing data:
+Sometimes, a variable with specific values is used to encode missing data. For example, though R offers the option "NA," numerical data is occasionally input as "-99" or, in the event that it is missing, as a very big number like "99999999”. Here introduced three types of known missing data:
 
 "“888”: “Asked in this wave, but not asked of this respondent”
 
