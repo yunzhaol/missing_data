@@ -1,0 +1,69 @@
+---
+title: "Missing data's meaning and how we should deal with it."
+author: 
+  - Yunzhao Li
+date: today
+thanks: "Code and data are available at: https://github.com/yunzhaol/missing_data.git"
+bibliography: ref8.bib
+date-format: long
+format: pdf
+editor: visual
+---
+
+# What is missing data and what should we do about it?
+
+## What is missing data?
+Missing data occurs frequently in research, and how well it is handled will affect the we conclusions drawn. Methodologist William Shadish, stated in [@Azar2002] has identified missing data as "one of the most important statistical and design problems in research" due to its widespread nature. [@BaraldiEnders2010]
+
+A definition given by [@LittleRubinMissingData] is " Missing data are unobserved values that would be meaning - ful for analysis if observed ; in other words , a missing value hides a meaningful value ."
+
+There are three main categories stated in [@tellingstories]: 
+
+"1.Missing Completely At Random
+
+2.Missing at Random
+
+3.Missing Not At Random." 
+
+And we often need to deal with them using different approaches.
+
+## What should we do about it?
+
+According to [@tellingstories], we mainly have these 3 methods to handle them: 
+
+"1.Drop observations with missing data.
+
+2.Impute the mean of observations without missing data.
+
+3.Use multiple imputation."
+
+We can use R's [@citeR] mean() function to remove the observations with missing data. By default, observations with missing values are not included in the calculations. To estimate the mean, we create an alternative dataset that omits any observations that have missing data. Next, we calculate the mean for the related column in this new dataset. This mean is then used to fill in the missing values in the initial dataset. Multiple imputation involves generating several plausible datasets, performing analysis on each, and then combining the results, often by taking the average. [@BaraldiEnders2010]
+
+Running simulations to eliminate existing observations and then applying different alternatives can enhance our comprehension of the compromises we encounter. Regardless of the decision taken, since seldom is there a straightforward solution, we have to make an effort to record and share the actions taken, and investigate how varying decisions impact later predictions.[@tellingstories]
+
+Sometimes, a variable with specific values is used to encode missing data. For example, though R offers the option "NA," numerical data is occasionally input as "-99" or, in the event that it is missing, as a very big number like "99999999”. Here introduced =three types of known missing data:
+
+"“888”: “Asked in this wave, but not asked of this respondent”
+
+“999”: “Not sure, don’t know”
+
+“.”: Respondent skipped" 
+
+Graphs and tables are often very helpful for the whole procedure.
+[@tellingstories]
+
+Furthermore, there are several traditional and modern techniques stated in [@BaraldiEnders2010].
+"The most common of traditional techniques include deletion and single imputation approaches (Peugh & Enders, 2004)."
+
+"Maximum likelihood estimation and multiple imputation are considered “state of the art” missing data techniques (Schafer & Graham, 2002) and are widely recommended in the methodological literature (Schafer and Olsen, 1998, Allison, 2002, Enders, 2006)"
+
+Also, according to [@LittleRubinMissingData],we have another approach named finding the Missing Values through Iteration:
+It was suggested by Hartley (1956) that a general noniterative method for predicting one missing value be applied iteratively for several ones. Three distinct trial values are used in place of the missing value in the technique for one missing value, and the residual sum of squares is computed for each trial value. The minimizing value of the one missing value can then be determined because the residual sum of squares in that one missing value is quadratic. 
+
+
+# Credit
+
+This work is updated based on Wentao Sun's feedback.
+
+\newpage
+# Reference
